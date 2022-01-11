@@ -6,7 +6,21 @@
 }
 
 header {
-    margin: 20px;
+    margin: 30px;
     color: rgb(32, 31, 31);
-    font-size: 0.9rem;
+    font-size: 1rem;
+}
+
+.group {
+    font-size: larger;
+    position: relative;
+    top: -45px;
+    left: 1250px;
+}
+
+.filter {
+    font-size: larger;
+    position: relative;
+    top: -45px;
+    left: 1280px;
 }
