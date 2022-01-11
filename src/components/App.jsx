@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "./Header";
+import CreateSticky from "./CreateSticky";
 
 function App() {
   return (
     <div>
-      <Header />
-      
+      <CreateSticky />
+
     </div>
   );
 }
