@@ -14,6 +14,7 @@ function CreateSticky(props) {
     user: "",
     bucket: "",
     content: "",
+    u_id: props.count
   });
 
   function handleChange(event) {
@@ -22,18 +23,26 @@ function CreateSticky(props) {
     setNote((prevNote) => {
       return {
         ...prevNote,
-        [name]: value
+        [name]: value,
+        "u_id": props.count
       };
     });
   }
 
   function submitNote(event) {
+    
+    if(note.user === "" || note.bucket === "" || note.content === ""){
+      alert("Enter all the required fields!!");
+      return ;
+    }
+
     props.onAdd(note);
     // console.log(note);
     setNote({
       user: "",
       bucket: "",
-      content: ""
+      content: "",
+      u_id: ""
     });
     setExpanded(false);
     event.preventDefault();
