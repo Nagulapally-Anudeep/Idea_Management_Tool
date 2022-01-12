@@ -32,13 +32,24 @@ function Note(props) {
     });
   }
 
-  const customColors = ["rgb(250, 223, 72)"];
+  const customColors = [
+    "rgb(248 221 128)",
+    "rgb(224 167 249)",
+    "rgb(242 131 132)",
+    "rgb(137 243 167)",
+    "rgb(134 206 252)",
+  ];
 
   return (
-    <div className="note" onDoubleClick={editToggle}>
+    <div className="note" style={{backgroundColor: customColors[props.u_id%5]}} onDoubleClick={editToggle}>
       {editable ? (
         <h2>
-          <input className="editable" name="bucket" value={editedNote.bucket} onChange={edit} />
+          <input
+            className="editable"
+            name="bucket"
+            value={editedNote.bucket}
+            onChange={edit}
+          />
         </h2>
       ) : (
         <h2>{editedNote.bucket}</h2>
@@ -46,7 +57,12 @@ function Note(props) {
 
       {editable ? (
         <p>
-          <input className="editable" name="content" value={editedNote.content} onChange={edit} />
+          <input
+            className="editable"
+            name="content"
+            value={editedNote.content}
+            onChange={edit}
+          />
         </p>
       ) : (
         <p>{editedNote.content}</p>
@@ -54,7 +70,12 @@ function Note(props) {
 
       {editable ? (
         <h3>
-          <input className="editable" name="user" value={editedNote.user} onChange={edit} />
+          <input
+            className="editable"
+            name="user"
+            value={editedNote.user}
+            onChange={edit}
+          />
         </h3>
       ) : (
         <h3>{editedNote.user}</h3>

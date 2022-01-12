@@ -22,7 +22,7 @@ header {
   font-size: larger;
   position: relative;
   top: -30px;
-  left: 1250px;
+  left: 1350px;
 }
 
 .create-note {
@@ -57,7 +57,7 @@ header {
 }
 
 .note {
-  background-color: rgb(250, 223, 72);
+  background-color: rgb(242 131 132);
   width: 200px;
   height: 200px;
   overflow: auto;

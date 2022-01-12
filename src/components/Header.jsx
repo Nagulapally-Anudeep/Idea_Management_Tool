@@ -13,9 +13,9 @@ function Header(props) {
     <div>
       <header>
         <h1>Sticky Notes</h1>
-        <Button variant="contained" color="primary" className="group">
+        {/* <Button variant="contained" color="primary" className="group">
           Group
-        </Button>
+        </Button> */}
         <Button
           variant="contained"
           color="secondary"
