@@ -55,3 +55,51 @@ header {
     bottom: -18px;
     right: 10px;
 }
+
+.note {
+  background-color: rgb(250, 223, 72);
+  width: 200px;
+  margin: 35px;
+  padding: 10px;
+  float: left;
+  box-shadow: 0 2px 5px #ccc;
+}
+
+.note h2 {
+  background-color: grey;
+  padding: 5px 15px 5px 15px;
+  font-size: 1em;
+  color: whitesmoke;
+  border-radius: 7px;
+  float: left;
+  margin: 5px;
+  font-weight: 100;
+}
+
+.note p{
+  display: inline-block;
+  font-size: small;
+  margin: 5px;
+  color: rgb(49, 47, 47);
+  font-weight: 600;
+}
+
+.note h3 {
+  font-size: medium;
+  margin: 5px;
+  color: rgb(49, 47, 47);
+  font-weight: 600;
+}
+
+.note button {
+  position: relative;
+  float: right;
+  margin-right: 10px;
+  border: none;
+  width: 36px;
+  height: 36px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 5px;
+}

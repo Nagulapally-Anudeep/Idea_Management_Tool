@@ -28,7 +28,7 @@ function CreateSticky(props) {
   }
 
   function submitNote(event) {
-    // props.addNote(note);
+    props.onAdd(note);
     // console.log(note);
     setNote({
       user: "",
