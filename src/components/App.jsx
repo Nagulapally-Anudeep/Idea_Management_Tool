@@ -12,6 +12,18 @@ function App() {
     console.log(notes);
   }
 
+  function deleteNote(id){
+
+    function matchId(noteItem,index) {
+      return index!==id;
+    }
+
+    setNotes( (prevNotes) => {
+      return (prevNotes.filter(matchId));
+    } );
+
+  }
+
   return (
     <div>
       <CreateSticky onAdd={addNote} />
@@ -24,6 +36,7 @@ function App() {
             user={note.user}
             bucket={note.bucket}
             content={note.content}
+            onDelete={deleteNote}
           />
         );
       })}
