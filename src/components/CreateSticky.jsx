@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
-import { Button } from "@material-ui/core";
 
 function CreateSticky(props) {
   const [isExpanded, setExpanded] = useState(false);
@@ -14,7 +13,7 @@ function CreateSticky(props) {
     user: "",
     bucket: "",
     content: "",
-    u_id: props.count
+    u_id: props.count,
   });
 
   function handleChange(event) {
@@ -24,16 +23,15 @@ function CreateSticky(props) {
       return {
         ...prevNote,
         [name]: value,
-        "u_id": props.count
+        u_id: props.count,
       };
     });
   }
 
   function submitNote(event) {
-    
-    if(note.user === "" || note.bucket === "" || note.content === ""){
+    if (note.user === "" || note.bucket === "" || note.content === "") {
       alert("Enter all the required fields!!");
-      return ;
+      return;
     }
 
     props.onAdd(note);
@@ -42,7 +40,7 @@ function CreateSticky(props) {
       user: "",
       bucket: "",
       content: "",
-      u_id: ""
+      u_id: "",
     });
     setExpanded(false);
     event.preventDefault();
@@ -50,50 +48,38 @@ function CreateSticky(props) {
 
   return (
     <div>
-      <header>
-        <h1>Sticky Notes</h1>
-        <Button variant="contained" color="primary" className="group">
-          Group
-        </Button>
-        <Button variant="contained" color="secondary" className="filter">
-          Filter
-        </Button>
-      </header>
-
-      <div>
-        <form className="create-note">
-          {isExpanded && (
-            <input
-              name="user"
-              value={note.user}
-              onChange={handleChange}
-              placeholder="User"
-              autoComplete="off"
-            />
-          )}
-          {isExpanded && (
-            <input
-              name="bucket"
-              value={note.bucket}
-              onChange={handleChange}
-              placeholder="Related to.."
-              autoComplete="off"
-            />
-          )}
-          <textarea
-            name="content"
-            value={note.content}
+      <form className="create-note">
+        {isExpanded && (
+          <input
+            name="user"
+            value={note.user}
             onChange={handleChange}
-            onClick={Expand}
-            rows={isExpanded ? 3 : 1}
-            placeholder="Make a Slip..."
+            placeholder="User"
             autoComplete="off"
           />
-          <Fab onClick={submitNote}>
-            <AddIcon />
-          </Fab>
-        </form>
-      </div>
+        )}
+        {isExpanded && (
+          <input
+            name="bucket"
+            value={note.bucket}
+            onChange={handleChange}
+            placeholder="Related to.."
+            autoComplete="off"
+          />
+        )}
+        <textarea
+          name="content"
+          value={note.content}
+          onChange={handleChange}
+          onClick={Expand}
+          rows={isExpanded ? 3 : 1}
+          placeholder="Make a Slip..."
+          autoComplete="off"
+        />
+        <Fab onClick={submitNote}>
+          <AddIcon />
+        </Fab>
+      </form>
     </div>
   );
 }

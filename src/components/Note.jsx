@@ -32,6 +32,8 @@ function Note(props) {
     });
   }
 
+  const customColors = ["rgb(250, 223, 72)"];
+
   return (
     <div className="note" onDoubleClick={editToggle}>
       {editable ? (
