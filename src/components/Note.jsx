@@ -49,10 +49,11 @@ function Note(props) {
             name="bucket"
             value={editedNote.bucket}
             onChange={edit}
+            autoComplete="off"
           />
         </h2>
       ) : (
-        <h2>{editedNote.bucket}</h2>
+        <h2 style={ (editedNote.bucket === "")?{display: "none"}:{display: "inline-block"} } >{editedNote.bucket}</h2>
       )}
 
       {editable ? (
@@ -62,6 +63,7 @@ function Note(props) {
             name="content"
             value={editedNote.content}
             onChange={edit}
+            autoComplete="off"
           />
         </p>
       ) : (
@@ -75,10 +77,11 @@ function Note(props) {
             name="user"
             value={editedNote.user}
             onChange={edit}
+            autoComplete="off"
           />
         </h3>
       ) : (
-        <h3>{editedNote.user}</h3>
+        <h3>-{editedNote.user}</h3>
       )}
 
       <button onClick={deleteNote}>

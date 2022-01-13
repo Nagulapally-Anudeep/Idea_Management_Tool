@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "./Header";
 import CreateSticky from "./CreateSticky";
 import Note from "./Note";
+import Drag from "./Drag";
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -59,8 +60,8 @@ function App() {
       <CreateSticky onAdd={addNote} count={count} />
 
       {notes.map((note, index) => {
-        return ( (filterWord==="all" || filterWord===note.bucket)?
-          (<Note
+        return ( (filterWord==="all" || filterWord==="" || filterWord===note.bucket)?
+          (<Drag dataItem={note} key={note.u_id}><Note
             key={note.u_id}
             id={index}
             user={note.user}
@@ -69,7 +70,7 @@ function App() {
             u_id={note.u_id}
             onDelete={deleteNote}
             onUpdate={updateNote}
-          />) : (<div key={note.u_id}></div>)
+          /></Drag>) : (<div key={note.u_id}></div>)
         );
       })}
     </div>

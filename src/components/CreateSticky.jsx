@@ -29,8 +29,8 @@ function CreateSticky(props) {
   }
 
   function submitNote(event) {
-    if (note.user === "" || note.bucket === "" || note.content === "") {
-      alert("Enter all the required fields!!");
+    if (note.user === "" || note.content === "") {
+      alert("Enter all the required (*) fields!!");
       return;
     }
 
@@ -54,7 +54,7 @@ function CreateSticky(props) {
             name="user"
             value={note.user}
             onChange={handleChange}
-            placeholder="User"
+            placeholder="User *"
             autoComplete="off"
           />
         )}
@@ -73,7 +73,7 @@ function CreateSticky(props) {
           onChange={handleChange}
           onClick={Expand}
           rows={isExpanded ? 3 : 1}
-          placeholder="Make a Slip..."
+          placeholder="Make a Slip... *"
           autoComplete="off"
         />
         <Fab onClick={submitNote}>
