@@ -14,6 +14,8 @@ function CreateSticky(props) {
     bucket: "",
     content: "",
     u_id: props.count,
+    x: 0,
+    y: 0
   });
 
   function handleChange(event) {
@@ -41,6 +43,8 @@ function CreateSticky(props) {
       bucket: "",
       content: "",
       u_id: "",
+      x: 0,
+      y: 0
     });
     setExpanded(false);
     event.preventDefault();

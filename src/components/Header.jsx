@@ -8,11 +8,23 @@ function Header(props) {
     //   console.log(filterBy);
     props.onFilter(filterBy);
   }
+
+  function grouping() {
+    props.onGroup();
+  } 
     
   return (
     <div>
       <header>
         <h1>Sticky Notes</h1>
+        <Button
+          variant="contained"
+          color="primary"
+          className="group"
+          onClick={grouping}
+        >
+          Group
+        </Button>
         <Button
           variant="contained"
           color="secondary"

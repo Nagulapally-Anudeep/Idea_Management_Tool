@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
 
-function Note(props) {
+export default function Note(props) {
   function deleteNote() {
     props.onDelete(props.u_id);
   }
@@ -11,6 +11,8 @@ function Note(props) {
     bucket: props.bucket,
     content: props.content,
     u_id: props.u_id,
+    x: props.x,
+    y: props.y
   });
 
   function edit(event) {
@@ -41,7 +43,22 @@ function Note(props) {
   ];
 
   return (
-    <div className="note" style={{backgroundColor: customColors[props.u_id%5]}} onDoubleClick={editToggle}>
+    <div
+      className="note"
+      style={
+        props.cords.noteId === props.u_id
+          ? {
+              backgroundColor: customColors[props.u_id % 5],
+              zIndex: props.u_id,
+              transform: `translateX(${props.cords.x}px) translateY(${props.cords.y}px)`
+            }
+          : {
+              backgroundColor: customColors[props.u_id % 5],
+              zIndex: props.u_id,
+            }
+      }
+      onDoubleClick={editToggle}
+    >
       {editable ? (
         <h2>
           <input
@@ -53,7 +70,15 @@ function Note(props) {
           />
         </h2>
       ) : (
-        <h2 style={ (editedNote.bucket === "")?{display: "none"}:{display: "inline-block"} } >{editedNote.bucket}</h2>
+        <h2
+          style={
+            editedNote.bucket === ""
+              ? { display: "none" }
+              : { display: "inline-block" }
+          }
+        >
+          {editedNote.bucket}
+        </h2>
       )}
 
       {editable ? (
@@ -91,4 +116,4 @@ function Note(props) {
   );
 }
 
-export default Note;
+// export default Note;

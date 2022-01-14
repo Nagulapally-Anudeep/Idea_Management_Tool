@@ -24,7 +24,7 @@ header {
   font-size: larger;
   position: relative;
   top: -30px;
-  left: 1350px;
+  left: 1270px;
 }
 
 .create-note {
@@ -63,7 +63,7 @@ header {
   width: 200px;
   height: 200px;
   overflow: auto;
-  margin: 35px;
+  margin: 50px;
   padding: 10px;
   float: left;
   box-shadow: 0 2px 5px #ccc;
@@ -75,7 +75,6 @@ header {
   font-size: 1em;
   color: whitesmoke;
   border-radius: 7px;
-  float: left;
   margin: 5px;
   margin-right: 10px;
   font-weight: 100;
@@ -116,4 +115,41 @@ header {
   border: none;
   outline: none;
   background-color: inherit;
+}
+
+.grouped-buckets {
+  /* position: absolute;
+  top: 250px;
+  left: 20px; */
+  /* background-color: honeydew; */
+  width: 1500px;
+  height: auto;
+  /* display: block; */
+  padding: 10px;
+  margin: 20px;
+  /* white-space: nowrap; */
+} 
+
+
+.bucket-list {
+  background-color: rgb(224, 218, 218);
+  
+  /* position: absolute; */
+  display: inline-block;
+  width: 650px;
+  height: 500px;
+  margin: 30px;
+  overflow: auto;
+}
+
+.bucket-list h2 {
+  position: relative;
+  /* left: 300px; */
+  text-align: center;
+  /* display: inline-block; */
+  padding: 5px 15px 5px 15px;
+  border-radius: 7px;
+  margin: 25px;
+  background-color: white;
+  border: 1px solid black;
 }
