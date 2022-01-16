@@ -5,6 +5,12 @@ Users can edit the highlights(sticky notes) by double clicking on that area and 
 
 It also has a filter and group features.
 
+Filter feature allows user to filter out the highlights by bucket name.
+Inorder to see all the highlights again,user can filter using "all" keyword or just simply use filter without any keyword.
+
+Group feature allows user to see all the highlights in their respective bucket list.
+And to go back to default screen ,user can click on the "Group" button again.
+
 
 Hosted Link: https://anudeep-idea-managing-tool.netlify.app/
 
